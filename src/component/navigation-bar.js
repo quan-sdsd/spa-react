@@ -1,85 +1,24 @@
-import NavMenuItem from "./nav-menu-item";
-import {NavigationItem} from "../model/navigation-item";
-export default function NavigationBar(props) {
-    const {navigations} = props;
-    return (
-        <div className="navigation-bar-container">
-            <div className="navigation-bar">
-                {navigations.map((item, index) =>
-                    <NavMenuItem {...item} />
-                )}
-            </div>
-        </div>
+import React from 'react'
+import {useEffect} from "react";
+import SiteTopBar from "./site-top-bar";
+import NavigationMenuBar from "./navigation-menu-bar";
+import NavigationBarDrawerMode from "./navigation-bar-drawer-mode";
+
+export default function NavigationBar() {
+    useEffect(() => {
+        window.document.documentElement.addEventListener("scroll", (e)=> {
+            const pos =  window.scrollY;
+            if(pos > 57) {
+
+            }
+        });
+    }, []);
+
+    return(
+        <React.Fragment>
+            <SiteTopBar phone="0923123123"/>
+            <NavigationMenuBar/>
+            <NavigationBarDrawerMode/>
+        </React.Fragment>
     )
-}
-
-
-NavigationBar.defaultProps = {
-    navigations: [
-        new NavigationItem("Home", "/home"),
-        new NavigationItem("Services", "/service", getServiceItem()),
-        new NavigationItem("Products", "/product", getProductItem()),
-        new NavigationItem("About us", "/about"),
-        new NavigationItem("Contact us", "/contact")
-    ],
-}
-
-function getServiceItem(){
-    return [
-        {
-            groupName: "group1",
-            items:[
-                new NavigationItem("service1", "/service-detail/1"),
-                new NavigationItem("service1", "/service-detail/1"),
-                new NavigationItem("service1", "/service-detail/1"),
-                new NavigationItem("service1", "/service-detail/1"),
-            ],
-        },
-        {
-            groupName: "group2",
-            items:[
-                new NavigationItem("service1", "/service-detail/1"),
-                new NavigationItem("service1", "/service-detail/1"),
-                new NavigationItem("service1", "/service-detail/1"),
-                new NavigationItem("service1", "/service-detail/1"),
-            ],
-        },
-    ]
-}
-
-function getProductItem(){
-    return [
-        {
-            groupName: "group1",
-            items:[
-                new NavigationItem("product1", "/product-detail/1"),
-                new NavigationItem("product1", "/product-detail/1"),
-                new NavigationItem("product1", "/product-detail/1"),
-                new NavigationItem("product1", "/product-detail/1"),
-            ],
-        },
-        {
-            groupName: "group2",
-            items:[
-                new NavigationItem("product1", "/product-detail/1"),
-                new NavigationItem("product1", "/product-detail/1"),
-                new NavigationItem("product1", "/product-detail/1"),
-                new NavigationItem("product1", "/product-detail/1"),
-            ],
-        },
-        {
-            groupName: "group3",
-            items:[
-                new NavigationItem("product1", "/product-detail/1"),
-                new NavigationItem("product1", "/product-detail/1"),
-                new NavigationItem("product1", "/product-detail/1"),
-                new NavigationItem("product1", "/product-detail/1"),
-            ],
-        },
-    ]
-}
-
-
-function initData(navigations) {
-
 }

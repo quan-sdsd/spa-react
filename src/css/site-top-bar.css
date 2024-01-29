@@ -1,0 +1,76 @@
+.site-top-bar-container {
+    display: flex;
+    justify-content: center;
+}
+
+.site-top-bar {
+    width: 67%;
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.logo {
+    flex: 0 0 auto;
+}
+
+.top-bar-right-box {
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    transition: margin-left 0.3s ease, margin-right 0.3s ease;
+}
+
+.contract-info-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #323232;
+    border-radius: 5px;
+    padding: 10px;
+    color: #fff;
+    gap: 5px;
+}
+
+.contract-info-detail > div {
+    display: flex;
+    align-items: center;
+    font-family: Meiryo, sans-serif;
+    font-size: 8px;
+}
+
+.contract-info-detail > span {
+    font-family: Meiryo, sans-serif;
+    font-size: 12px;
+}
+
+.left-icon {
+    margin-right: 5px;
+}
+
+.right-icon {
+    margin-left: 5px;
+    font-size: 25px;
+}
+
+.search-area {
+    width: 150px;
+    height: 35px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 850px) {
+    .top-bar-right-box {
+        display: none;
+    }
+    .site-top-bar {
+        justify-content: center;
+    }
+}

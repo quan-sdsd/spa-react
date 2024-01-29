@@ -1,5 +1,6 @@
 import { MdSearch  } from "react-icons/md";
 import { BsFillTelephoneFill } from "react-icons/bs";
+import '../css/site-top-bar.css'
 export default function SiteTopBar(props) {
     const {phone} = props;
     return (

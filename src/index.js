@@ -1,16 +1,15 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './css/common.css';
 import reportWebVitals from './reportWebVitals';
-import SiteTopBar from "./component/site-top-bar";
 import NavigationBar from "./component/navigation-bar";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
-  <React.StrictMode>
-    <SiteTopBar phone="0923123123" email="asdasfasfas@gmail.com" />
-    <NavigationBar/>
-  </React.StrictMode>
+  <React.Fragment>
+      <NavigationBar/>
+      <div style={{height: 5000}}></div>
+  </React.Fragment>
 );
 
 // If you want to start measuring performance in your app, pass a function
